@@ -1,4 +1,13 @@
 from setuptools import setup, find_packages
+import os
+
+# Ensure all necessary files are included
+def package_files(directory):
+    paths = []
+    for (path, directories, filenames) in os.walk(directory):
+        for filename in filenames:
+            paths.append(os.path.join('..', path, filename))
+    return paths
 
 setup(
     name="guardianeye",
@@ -21,6 +30,15 @@ setup(
             'ge=guardianeye.cli.main:app',  # Short command alias
         ],
     },
+    package_data={
+        'guardianeye': [
+            'data/signatures/*.csv',
+            'cli/*.py',
+            'core/*.py',
+        ] + package_files('guardianeye'),
+    },
+    include_package_data=True,
+    zip_safe=False,  # Ensure the package is not installed as a zip
     author="zeeshan01001",
     author_email="your.email@example.com",
     description="GuardianEye - Advanced Malware Detection System",
@@ -37,8 +55,4 @@ setup(
         "Environment :: Console",
     ],
     python_requires='>=3.8',
-    include_package_data=True,
-    package_data={
-        'guardianeye': ['data/signatures/*.csv'],
-    },
 ) 

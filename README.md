@@ -1,4 +1,4 @@
-# 🛡️ GuardianEye
+# ⚔️ GuardianEye
 
 [![Python 3.8+](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/downloads/) [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT) [![Build Status](https://img.shields.io/badge/build-passing-brightgreen.svg)](https://github.com/zeeshan01001/GuardianEye) [![Code Style: Black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
 
@@ -7,6 +7,15 @@ Advanced Malware Detection System powered by intelligent signature-based scannin
 ## 🌟 Overview
 
 GuardianEye is a sophisticated security tool that protects your system by detecting potentially malicious files through advanced scanning techniques. Using a combination of signature-based detection, VirusTotal API integration, machine learning, and real-time monitoring, GuardianEye serves as your vigilant defender against malware threats.
+
+## 🔄 Recent Updates
+
+- Fixed CLI shortcut command 'ge' to work globally
+- Improved package installation and dependency management
+- Enhanced Python path handling for better module imports
+- Added comprehensive package data handling
+- Made package non-zip-safe for reliable file access
+- Updated documentation with clearer usage examples
 
 ## 💻 Installation
 
@@ -89,7 +98,7 @@ When scanning a clean file, GuardianEye will show a detailed status indicating t
 $ ge scan clean_file.txt
 ╭───────────────────────────────────────────────────────────────────────────────────────────╮
 │                                                                                           │
-│  🛡️ GuardianEye Advanced Malware Detection System                                         │
+│  ⚔️ GuardianEye Advanced Malware Detection System                                         │
 │                                                                                           │
 │     Version    1.0.0                                                                      │
 │                                                                                           │
@@ -120,7 +129,7 @@ When a malicious file is detected, GuardianEye will show detailed threat informa
 $ guardianeye scan malicious_file.txt
 ╭───────────────────────────────────────────────────────────────────────────────────────────╮
 │                                                                                           │
-│  🛡️ GuardianEye Advanced Malware Detection System                                         │
+│  ⚔️ GuardianEye Advanced Malware Detection System                                         │
 │                                                                                           │
 │     Version    1.0.0                                                                      │
 │                                                                                           │
@@ -152,7 +161,7 @@ Scan an entire directory recursively:
 $ ge scan /path/to/directory
 ╭───────────────────────────────────────────────────────────────────────────────────────────╮
 │                                                                                           │
-│  🛡️ GuardianEye Advanced Malware Detection System                                         │
+│  ⚔️ GuardianEye Advanced Malware Detection System                                         │
 │                                                                                           │
 │     Version    1.0.0                                                                      │
 │                                                                                           │
@@ -182,7 +191,7 @@ $ ge scan /path/to/directory
 View system information:
 ```bash
 $ ge info
-🛡️ GuardianEye System Information
+⚔️ GuardianEye System Information
 
 Version: 1.0.0
 Author: zeeshan01001

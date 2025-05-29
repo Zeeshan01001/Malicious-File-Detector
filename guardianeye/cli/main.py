@@ -22,10 +22,14 @@ from rich.text import Text
 from datetime import datetime
 from typing import Optional, List
 from pathlib import Path
+import pkg_resources
 
-# Add the parent directory to the Python path
-sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-from core.scanner import MaliciousFileScanner
+# Ensure package is in Python path
+package_root = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+if package_root not in sys.path:
+    sys.path.insert(0, package_root)
+
+from guardianeye.core.scanner import MaliciousFileScanner
 
 app = typer.Typer(
     help="🛡️ GuardianEye - Advanced Malware Detection System",
@@ -199,5 +203,13 @@ def update():
         
         console.print("[green]✅ Signature database updated successfully![/green]")
 
+def main():
+    """Entry point for both 'guardianeye' and 'ge' commands."""
+    try:
+        app()
+    except Exception as e:
+        console.print(f"[red]Error: {str(e)}[/red]")
+        sys.exit(1)
+
 if __name__ == "__main__":
-    app() 
+    main() 
